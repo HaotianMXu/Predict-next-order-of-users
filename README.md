@@ -5,12 +5,12 @@ My solution for the Instacart Market Basket Analysis competition hosted on Kaggl
 This task is reformulated as a binary classification problem: given a user, a target product, and the user's purchase history, predict whether the target product will appear in the user's next order. The evaluation metric is the F1-score between the set of predicted products and the set of true products.
 
 ## Data Description
-The dataset is an open-source dataset provided by Instacart ([source](https://tech.instacart.com/3-million-instacart-orders-open-sourced-d40d29ead6f2))
+The dataset is an open-source dataset provided by Instacart ([source](https://tech.instacart.com/3-million-instacart-orders-open-sourced-d40d29ead6f2)):
 
  > This anonymized dataset contains a sample of over 3 million grocery orders from more than 200,000 Instacart users.
 For each user, we provide between 4 and 100 of their orders, with the sequence of products purchased in each order. We also provide the week and hour of day the order was placed, and a relative measure of time between orders.
 
-Below is the full data schema ([source](https://gist.github.com/jeremystan/c3b39d947d9b88b3ccff3147dbcf6c6b))
+Below is the full data information ([source](https://gist.github.com/jeremystan/c3b39d947d9b88b3ccff3147dbcf6c6b)):
 
  > `orders` (3.4m rows, 206k users):
  > * `order_id`: order identifier
