@@ -215,9 +215,9 @@ user_f['_user_total_orders']=priorsXorders['order_number'].groupby(priorsXorders
 #bought time interval
 user_f['days_since_prior_orderMean']=priorsXordersXproducts['days_since_prior_order'].groupby(priorsXordersXproducts.user_id).mean().astype(np.float32)
 user_f['days_since_prior_orderStd']=priorsXordersXproducts['days_since_prior_order'].groupby(priorsXordersXproducts.user_id).std().astype(np.float32)
-# _user_reorder_ratio: reorder的总次数 / 第一单后买后的总次数
-# _user_total_products: 用户购买的总商品数
-# _user_distinct_products: 用户购买的unique商品数
+# _user_reorder_ratio
+# _user_total_products
+# _user_distinct_products
 tmp_group=priorsXorders['product_id'].groupby(priorsXorders.user_id)
 user_f['_user_total_products']=tmp_group.count()
 user_f['_user_distinct_products']=tmp_group.agg(lambda x: x.nunique())
