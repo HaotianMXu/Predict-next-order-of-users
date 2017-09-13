@@ -45,3 +45,39 @@ Below is the full data information ([source](https://gist.github.com/jeremystan/
  > * `"prior"`: orders prior to that users most recent order (~3.2m orders)
  > * `"train"`: training data supplied to participants (~131k orders)
  > * `"test"`: test data reserved for machine learning competitions (~75k orders)
+
+ ## Approach
+ ### Data Exploratory Analysis
+ * Try to figure out which features may have high impact on our prediction model.
+ ### Extract features (data_preprocessing.py)
+ #### Product features
+ * number of apearance in all the history orders
+ * total reorder number
+ * reorder ratio (product level)
+ * number of users who purchased this product
+ * average and standard deviation of add_to_cart_order
+ * average and standard deviation of purchase day_of_week (Monday, Tuesday, ...)
+ * average and standard deviation of purchase hour_of_day (8 am, 9am, ...)
+ * recency (captures if the product is generally brought more in users earlier orders or later orders)
+ * number of orders of user who bought this product 
+ * number of users who purchased this product only once / more than once
+ #### User features
+ * number of Aisles/Departments a user purchased products from
+ * number of total history orders of a user
+ * reorder ratio (user level)
+ * average and standard deviation of days between history orders
+ * average and standard deviation of number of products purchased in the same order
+ * number of total / distinct products purchased
+ * average and standard deviation of add_to_cart_order (user level)
+ * average and standard deviation of interval between two orders which contained the same product
+ ### Apply cross-validation to choose hyperparameters for Gradient Boosting Descision Tree (lgb_userCV.py)
+ * I used [lightGBM](https://github.com/Microsoft/LightGBM), which is a high performance gradient boosting framework developed by Microsoft.
+ * A 5-fold cross-validation on users was applied.
+ ### Analyze cross-validation results (loadCVResult.py)
+ * Analyzed saved cross-validation results and chose best 3 sets of parameters.
+ ### Train models with selected parameters (lgbPredict.py)
+ ### Optimize F1-score
+ * I followed the work of [Dr. Nan in ICML 2012](https://arxiv.org/ftp/arxiv/papers/1206/1206.4625.pdf).
+ 
+ ## TODO
+ * Re-orgnize and clean code and README file
