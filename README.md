@@ -77,4 +77,4 @@ Below is the full data information ([source](https://gist.github.com/jeremystan/
  * Analyzed saved cross-validation results and chose best 3 sets of parameters.
  ### Train models with selected parameters (lgbPredict.py)
  ### Optimize F1-score
- * I followed the work of [Dr. Nan in ICML 2012](https://arxiv.org/ftp/arxiv/papers/1206/1206.4625.pdf).
+ * I followed the [work](https://arxiv.org/ftp/arxiv/papers/1206/1206.4625.pdf) of Dr. Nan in ICML 2012.
