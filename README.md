@@ -78,6 +78,3 @@ Below is the full data information ([source](https://gist.github.com/jeremystan/
  ### Train models with selected parameters (lgbPredict.py)
  ### Optimize F1-score
  * I followed the work of [Dr. Nan in ICML 2012](https://arxiv.org/ftp/arxiv/papers/1206/1206.4625.pdf).
- 
- ## TODO
- * Re-orgnize and clean code and README file
