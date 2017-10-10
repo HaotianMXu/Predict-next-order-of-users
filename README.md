@@ -41,7 +41,7 @@ Below is the full data information ([source](https://gist.github.com/jeremystan/
  > * `add_to_cart_order`: order in which each product was added to cart
  > * `reordered`: 1 if this product has been ordered by this user in the past, 0 otherwise
  >
- > where `SET` is one of the four following evaluation sets (`eval_set` in `orders`):
+ > where `SET` is one of the following evaluation sets (`eval_set` column in `orders`):
  > * `"prior"`: orders prior to that users most recent order (~3.2m orders)
  > * `"train"`: training data supplied to participants (~131k orders)
  > * `"test"`: test data reserved for machine learning competitions (~75k orders)
